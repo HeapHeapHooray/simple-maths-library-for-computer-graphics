@@ -7,7 +7,7 @@ class Matrix4
 {
 private:
 
-std::array<float,16>elements = {0,0,0,0,
+std::array<float,16> elements = {0,0,0,0,
                                  0,0,0,0,
                                  0,0,0,0,
                                  0,0,0,0};
