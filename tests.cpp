@@ -61,5 +61,5 @@ int main(int argc, char **argv)
     testMatrix4();
     testMatrixFactory();
     std::cin.get();
-	return 0;
+    return 0;
 }
