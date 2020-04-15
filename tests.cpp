@@ -57,7 +57,7 @@ void testMatrixFactory()
 
 int main(int argc, char **argv)
 {
-	testVector3();
+    testVector3();
     testMatrix4();
     testMatrixFactory();
     std::cin.get();
