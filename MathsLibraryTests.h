@@ -1,9 +1,15 @@
+#ifndef MATHS_LIBRARY_TESTS_H
+#define MATHS_LIBRARY_TESTS_H
+
 #include <iostream>
 #include <array>
 #include "Vector3.h"
-#include "Vector3.h"
+#include "Vector4.h"
 #include "Matrix4.h"
 #include "MatrixFactory.h"
+
+namespace MathsLibraryTests
+{
 
 void testVector3()
 {
@@ -17,6 +23,21 @@ void testVector3()
     std::cout << "Magnitude of A: " << vectorA.magnitude() << std::endl;
     std::cout << "Dot Product of A and B: " << Vector3::dot(vectorA,vectorB) << std::endl;
     std::cout << "Cross Product of A and B: " << Vector3::cross(vectorA,vectorB) << std::endl;
+    std::cout << "Normalized A: " << vectorA.normalize() << std::endl;
+    std::cout << "Vector A multiplied by scalar 3 : " << vectorA.multiplyByScalar(3) << std::endl;
+}
+
+void testVector4()
+{
+    std::cout << "Vector4 Tests: " << std::endl;
+    Vector4 vectorA = Vector4(1,2,3,4);
+    const Vector4 vectorB = Vector4(Vector3(5,6,7),8);
+    std::cout << "Vector A: " << vectorA << std::endl;
+    std::cout << "Vector B: " << vectorB << std::endl;
+    std::cout << "A + B : " << Vector4::add(vectorA,vectorB) << std::endl;
+    std::cout << "A - B : " << vectorB.subtract(vectorA) << std::endl;
+    std::cout << "Magnitude of A: " << vectorA.magnitude() << std::endl;
+    std::cout << "Dot Product of A and B: " << Vector4::dot(vectorA,vectorB) << std::endl;
     std::cout << "Normalized A: " << vectorA.normalize() << std::endl;
     std::cout << "Vector A multiplied by scalar 3 : " << vectorA.multiplyByScalar(3) << std::endl;
 }
@@ -55,11 +76,14 @@ void testMatrixFactory()
     std::cout << "Orthographic Matrix: " << std::endl << MatrixFactory::createOrthographicProjectionMatrix(-1,1,-1,1,-300.0f,300.0f) << std::endl;
 }
 
-int main(int argc, char **argv)
+void testAll()
 {
     testVector3();
+    testVector4();
     testMatrix4();
     testMatrixFactory();
-    std::cin.get();
-    return 0;
 }
+
+}
+
+#endif
