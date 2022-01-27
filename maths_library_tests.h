@@ -8,6 +8,9 @@
 #include "Matrix4.h"
 #include "MatrixFactory.h"
 
+namespace MathsLibraryTests
+{
+
 void testVector3()
 {
     std::cout << "Vector3 Tests: " << std::endl;
@@ -79,6 +82,8 @@ void testAll()
     testVector4();
     testMatrix4();
     testMatrixFactory();
+}
+
 }
 
 #endif
